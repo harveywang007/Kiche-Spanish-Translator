@@ -122,7 +122,7 @@ def make_batches(ds, src_tok, trg_tok, buffer):
 def positional_encoding(length, depth):
         """
 
-        Calculates the positional encoding for the sentences.
+        Calculates the position vectors for the sentences.
 
         Parameters:
             length (int): The maximum length of a sentence.
@@ -153,6 +153,7 @@ class PositionalEmbedding(tf.keras.layers.Layer):
 
     This is a class for the positional embedding to encode word order. The attention layers in a transformer do not see word order.
     A set of sines and cosines of different frequencies are used to encode the position of each word.
+    This layer will look up a token's embedding vector and add a position vector created by the positional_encoding function.
 
     Attributes:
         d_model (int): The dimension of the dense layer of the model.
