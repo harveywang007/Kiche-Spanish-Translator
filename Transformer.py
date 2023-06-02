@@ -48,6 +48,7 @@ def preclean(filepath, source, target):
     return all_data[source], all_data[target]
 
 
+# This function is from the Tensorflow tutorial
 def split_test_val(source, target, buffer, batch):
     """Splits the data into training and validation sets, returns the training and validation sets."""
 
