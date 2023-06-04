@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 import einops
 
 import matplotlib.pyplot as plt
@@ -580,6 +579,7 @@ def masked_acc(y_true, y_pred):
 
     return tf.reduce_sum(match)/tf.reduce_sum(mask)
 
+
 # These are a class and methods from the Tensorflow tutorial
 class Export(tf.Module):
     """
@@ -595,6 +595,6 @@ class Export(tf.Module):
 
     @tf.function(input_signature=[tf.TensorSpec(dtype=tf.string, shape=[None])])
     def translate(self, inputs):
-        """Translates the a sentence, returns the translation."""
+        """Translates a sentence, returns the translation."""
 
         return self.model.translate(inputs)
